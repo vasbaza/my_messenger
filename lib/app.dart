@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:my_messanger/models/app_state.dart';
 import 'package:my_messanger/ui/features/home/home_screen.dart';
-import 'package:my_messanger/ui/resources/app_colors.dart';
+import 'package:my_messanger/ui/resources/app_theme.dart';
 import 'package:redux/redux.dart';
 
 class App extends StatelessWidget {
@@ -18,10 +18,7 @@ class App extends StatelessWidget {
     return StoreProvider<AppState>(
       store: store,
       child: MaterialApp(
-        theme: ThemeData(
-          useMaterial3: true,
-          colorScheme: ColorScheme.fromSeed(seedColor: AppColors.primary),
-        ),
+        theme: appTheme,
         home: const HomeScreen(),
       ),
     );
